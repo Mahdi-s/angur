@@ -1,0 +1,4 @@
+year,Revenue,Cost Of Goods Sold,Gross Profit,Research And Development Expenses,SG&A Expenses,Operating Expenses,Operating Income,Pre-Tax Income,Income Taxes,Income After Taxes,Income From Continuous Operations,Net Income,EBITDA,EBIT,Basic Shares Outstanding,Shares Outstanding,Basic EPS,EPS - Earnings Per Share
+2020,"$31,536 ","$24,906 ","$6,630 ","$1,491 ","$3,145 ","$29,542 ","$1,994 ","$1,154 ",$292 ,$862 ,$862 ,$690 ,"$4,496 ","$1,994 ",933,"1,083",$0.74 ,$0.64 
+2019,"$24,578 ","$20,509 ","$4,069 ","$1,343 ","$2,646 ","$24,647 ",($69),($665),$110 ,($775),($775),($870),"$2,273 ",($69),887,887,($0.98),($0.98)
+2018,"$21,461 ","$17,419 ","$4,042 ","$1,460 ","$2,835 ","$21,849 ",($388),"($1,005)",$58 ,"($1,063)","($1,063)",($976),"$1,672 ",($388),853,853,($1.14),($1.14)

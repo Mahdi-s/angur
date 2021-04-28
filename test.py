@@ -4,10 +4,12 @@ import csv
 #create database
 connection = sqlite3.connect('stocks.db')
 #create cursor instance
-cursor = connection.cursor()
+c = connection.cursor()
 
 
 
-cursor.execute("SELECT * FROM annual_income_statement_boeing")
-print(cursor.fetchall())
-#connection.commit()
+c.execute("SELECT * FROM market_historical_data_apple")
+#c.execute("SELECT * FROM annual_income_statement_apple")
+
+print(c.fetchone())
+connection.commit()

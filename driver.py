@@ -227,94 +227,94 @@ cursor.execute("""CREATE TABLE calculated_ratios (
     divident_yield real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_amazon (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_bestbuy (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_facebook (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_tesla (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_alphabet (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_apple (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_boeing (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_twitter (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_palantir (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_walmart (
-    ticker text PRIMARY KEY,
-    open_price real,
+    date text,
     high_price real,
     low_price real,
+    open_price real,
     close_price real,
-    adjusted_close_price real,
-    volume_traded integer
+    volume_traded integer,
+    adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE article_list (
     ticker text PRIMARY KEY,
