@@ -6,13 +6,12 @@ connection = sqlite3.connect('stocks.db')
 cursor = connection.cursor()
 #create tables
 cursor.execute("""CREATE TABLE comapny (
-    ticker text,
+    ticker text PRIMARY KEY,
     company_name text,
     company_industry text
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_amazon (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -33,8 +32,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_amazon (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_bestbuy (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -55,8 +53,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_bestbuy (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_facebook (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -77,8 +74,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_facebook (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_tesla (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -99,8 +95,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_tesla (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_alphabet (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -121,8 +116,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_alphabet (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_apple (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -143,8 +137,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_apple (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_boeing (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -165,8 +158,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_boeing (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_twitter (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -187,8 +179,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_twitter (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_palantir (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -209,8 +200,7 @@ cursor.execute("""CREATE TABLE annual_income_statement_palantir (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE annual_income_statement_walmart (
-    ticker text,
-    release_date text,
+    year integer,
     revenue real,
     cost_of_goods_sold real,
     gross_profit real,
@@ -231,13 +221,13 @@ cursor.execute("""CREATE TABLE annual_income_statement_walmart (
     eps_earning_per_share real
 )""")
 cursor.execute("""CREATE TABLE calculated_ratios (
-    ticker text,
+    ticker text PRIMARY KEY,
     price_to_book real,
     price_to_earing real,
     divident_yield real
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_amazon (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -246,7 +236,7 @@ cursor.execute("""CREATE TABLE market_historical_data_amazon (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_bestbuy (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -255,7 +245,7 @@ cursor.execute("""CREATE TABLE market_historical_data_bestbuy (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_facebook (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -264,7 +254,7 @@ cursor.execute("""CREATE TABLE market_historical_data_facebook (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_tesla (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -273,7 +263,7 @@ cursor.execute("""CREATE TABLE market_historical_data_tesla (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_alphabet (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -282,7 +272,7 @@ cursor.execute("""CREATE TABLE market_historical_data_alphabet (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_apple (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -291,7 +281,7 @@ cursor.execute("""CREATE TABLE market_historical_data_apple (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_boeing (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -300,7 +290,7 @@ cursor.execute("""CREATE TABLE market_historical_data_boeing (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_twitter (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -309,7 +299,7 @@ cursor.execute("""CREATE TABLE market_historical_data_twitter (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_palantir (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -318,7 +308,7 @@ cursor.execute("""CREATE TABLE market_historical_data_palantir (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE market_historical_data_walmart (
-    ticker text,
+    ticker text PRIMARY KEY,
     open_price real,
     high_price real,
     low_price real,
@@ -327,7 +317,7 @@ cursor.execute("""CREATE TABLE market_historical_data_walmart (
     volume_traded integer
 )""")
 cursor.execute("""CREATE TABLE article_list (
-    ticker text,
+    ticker text PRIMARY KEY,
     release_date text,
     url text,
     publisher text,
@@ -335,18 +325,18 @@ cursor.execute("""CREATE TABLE article_list (
     cons text
 )""")
 cursor.execute("""CREATE TABLE user (
-    user_email text,
+    user_email text PRIMARY KEY,
     sign_on_data text,
     opt_out text
 )""")
 cursor.execute("""CREATE TABLE user_communication (
-    user_email text,
+    user_email text PRIMARY KEY,
     subject text,
     message text,
     date_stamp text
 )""")
 cursor.execute("""CREATE TABLE user_portfolio (
-    user_email text,
+    user_email text PRIMARY KEY,
     ticker_list text
 )""")
 
