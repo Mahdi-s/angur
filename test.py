@@ -8,8 +8,8 @@ c = connection.cursor()
 
 
 
-c.execute("SELECT * FROM market_historical_data_apple")
+c.execute("SELECT year , revenue FROM annual_income_statement_apple")
 #c.execute("SELECT * FROM annual_income_statement_apple")
 
-print(c.fetchone())
+print(c.fetchall())
 connection.commit()

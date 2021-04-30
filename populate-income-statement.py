@@ -18,13 +18,22 @@ for company in company_list:
     data_file = open(file_loc)
     rows = csv.reader(data_file)
     next(rows)
+
     for row in rows:
         for i, item in enumerate(row):
             row[i] = item.strip(' $,()').replace(',','')
             if item == '-':
                 row[i] = ''
-            data.append(row)
+        data.append(row)
+
+    #print(data)
+    # print(company)
+    # print(data)
+    # print('\n')
+    # print('---------')
+    # exit()
     query = "INSERT INTO {0} VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)".format(table_list[index])
     cursor.executemany(query , data)
     index +=1
+    data = []
     connection.commit()
