@@ -317,12 +317,8 @@ cursor.execute("""CREATE TABLE market_historical_data_walmart (
     adjusted_close_price real
 )""")
 cursor.execute("""CREATE TABLE article_list (
-    ticker text PRIMARY KEY,
-    release_date text,
-    url text,
-    publisher text,
-    pros text,
-    cons text
+    comapany text,
+    url text
 )""")
 cursor.execute("""CREATE TABLE user (
     user_email text PRIMARY KEY,
@@ -336,7 +332,7 @@ cursor.execute("""CREATE TABLE user_communication (
     date_stamp text
 )""")
 cursor.execute("""CREATE TABLE user_portfolio (
-    user_email text PRIMARY KEY,
+    user_email text,
     ticker_list text
 )""")
 

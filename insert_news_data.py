@@ -3,18 +3,7 @@ import csv
 import pandas as pd
 import urllib.request
 import re
-# #create database
-# connection = sqlite3.connect('stocks.db')
-# #create cursor instance
-# c = connection.cursor()
-#
-#
-#
-# c.execute("SELECT year , revenue FROM annual_income_statement_apple")
-# #c.execute("SELECT * FROM annual_income_statement_apple")
-#
-# print(c.fetchall())
-# connection.commit()
+
 def articles(searchTerm):
     NumberofArticles =3
     url="https://news.search.yahoo.com/search?p="+searchTerm
@@ -24,7 +13,6 @@ def articles(searchTerm):
     link.close()
     arr=[]
     results=re.findall("\"https:\/\/[^\"]+\" referrerpolicy=\"origin\"", html)
-    print(results)
     #removing irrelevent links
     #print(results)
     print('testttt')
@@ -47,9 +35,24 @@ def articles(searchTerm):
     return releventNews
 
 
+#create database
+connection = sqlite3.connect('stocks.db')
+#create cursor instance
+cursor = connection.cursor()
 
+company_list = ['apple', 'amazon', 'bestbuy', 'facebook', 'tesla', 'alphabet', 'boeing', 'twitter', 'palantir', 'walmart']
 
-arts = articles('google')
-
-for a in arts:
-    print(a)
+arts = []
+for company in company_list:
+    # arts = []
+    print(company)
+    arts = articles(company)
+    query = "INSERT INTO article_list VALUES (?,?)"
+    for news in arts:
+        data = [[company, news]]
+        print(data)
+        cursor.executemany(query , data)
+        connection.commit()
+        data = []
+        print('success')
+        print(data)
